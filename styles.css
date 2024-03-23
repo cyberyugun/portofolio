@@ -1,0 +1,66 @@
+/* Custom CSS for tab visuals */
+.nav-tabs .nav-link {
+    color: white; /* Tab text color */
+    background-color: transparent; /* Tab background color */
+    border: none; /* Remove default border */
+    border-bottom: 3px solid transparent; /* Add bottom border */
+    border-radius: 0; /* Remove border radius */
+    padding: 10px 20px; /* Adjust padding */
+    margin-right: 10px; /* Add right margin between tabs */
+    font-weight: bold; /* Add font weight */
+    transition: border-color 0.3s ease-in-out; /* Add transition for smooth hover effect */
+}
+
+.nav-tabs .nav-link.active {
+    color: #007bff; /* Active tab text color */
+    background-color: transparent; /* Active tab background color */
+    border-bottom-color: #007bff; /* Active tab bottom border color */
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: 10px; /* Adjust bottom margin for tab items */
+}
+
+.nav-tabs .nav-link:hover {
+    color: #0056b3; /* Change text color on hover */
+}
+
+/* Add your custom CSS here */
+.btn-rounded-pill {
+    border-radius: 27px;
+}
+
+
+/* Custom Styles */
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.project-img {
+    height: 250px; /* Set the desired height */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+img[alt="Company Logo"] {
+    width: 4rem !important;
+    object-fit: contain;
+}
+
+#portfolio .card:hover {
+    transform: scale(1.05);
+    background-color: #4a5568;
+}
+
+#work-experience .bg-white:hover img {
+    transform: scale(1.2);
+}

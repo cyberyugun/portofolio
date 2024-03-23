@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Animate CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+       <!-- Add this link tag in the head of your HTML file -->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="bg-gray-800 fixed w-full z-10">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between py-4">
+                    <a class="text-white text-lg font-semibold" href="#">Portfolio</a>
+                    <button class="md:hidden text-gray-400 hover:text-white focus:outline-none focus:text-white" id="mobile-menu-toggle">
+                        <!-- Initially showing the menu icon -->
+                        <svg class="h-6 w-6 menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden md:flex items-center space-x-4" id="desktop-menu">
+                        <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="#home">Home</a>
+                        <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="#about">About</a>
+                        <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="#skills">Skills & Expertise</a>
+                        <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="#education">Education</a>
+                        <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="#work-experience">Work Experience</a>
+                        <a class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="#portfolio">Portfolio</a>
+                    </div>
+                </div>
+            </div>
+            <div class="md:hidden hidden" id="mobile-menu" style="max-height: calc(100vh - 56px); overflow-y: auto;">
+                <div class="bg-gray-900 px-2 pt-2 pb-3 space-y-1">
+                    <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="#home">Home</a>
+                    <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="#about">About</a>
+                    <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="#skills">Skills & Expertise</a>
+                    <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="#education">Education</a>
+                    <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="#work-experience">Work Experience</a>
+                    <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="#portfolio">Portfolio</a>
+                </div>
+            </div>
+        </nav>           
+          
+        <!-- Home Section -->
+        <section id="home" class="py-20 text-center bg-gray-800 text-white">
+            <div class="container mx-auto mt-32">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Welcome to My Portfolio</h1>
+                <p class="text-lg md:text-xl lg:text-2xl mb-8 animate__animated animate__fadeInUp">I am a web developer passionate about creating amazing websites.</p>
+            </div>
+            <div class="animate__animated animate__fadeInUp animate__delay-2s" id="typing-animation">
+                <p class="text-lg md:text-xl lg:text-2xl mb-8"></p>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="py-10 text-center bg-gray-900">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-4xl font-semibold mb-6 text-white">About Me</h2>
+                <div class="mx-auto max-w-md">
+                    <img src="my-profile.jpg" alt="Yudi Gunawan" class="rounded-full mx-auto mb-6 w-48">
+                    <p class="text-lg leading-relaxed text-white">As a frontend developer, I excel in crafting visually appealing websites using HTML, CSS, and JavaScript. I specialize in building from scratch, optimizing performance, and ensuring cross-browser compatibility. Proficient in Next.js, Angular, and Drupal, I value teamwork to achieve project goals efficiently. My focus on exceptional user experiences ensures valuable contributions to any project or team.</p>
+                    <div class="flex justify-center items-center mt-6">
+                        <a href="mailto:yudigunawan52@gmail.com" class="text-gray-300 mr-3">
+                            <i class="fas fa-envelope mr-1"></i> yudigunawan52@gmail.com
+                        </a>
+                        <a href="tel:+6282385743787" class="text-gray-300 mr-3">
+                            <i class="fas fa-phone mr-1"></i> +6282385743787
+                        </a>
+                    </div>
+                    <div class="flex justify-center items-center mt-3">
+                        <a href="https://www.linkedin.com/in/yudigunawan7383b8ab" target="_blank" class="text-gray-300 mr-3">
+                            <i class="fab fa-linkedin mr-1"></i>
+                        </a>
+                        <a href="https://github.com/cyberyugun" target="_blank" class="text-gray-300 mr-3">
+                            <i class="fab fa-github mr-1"></i>
+                        </a>
+                        <a href="https://wa.me/6282385743787" class="text-gray-300 mr-3">
+                            <i class="fab fa-whatsapp mr-1"></i>
+                        </a>
+                        <!-- Add more social media links/icons as needed -->
+                    </div>
+                    <div class="flex justify-center items-center mt-6">
+                        <a href="Yudi's Resume.pdf" download target="_blank" class="btn btn-outline-white btn-outline">
+                            <i class="fas fa-download mr-2"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>        
+
+        <!-- Skills & Expertise Section -->
+        <section id="skills" class="py-5 text-center bg-gray-900">
+            <!-- Change background color here -->
+            <div class="container">
+                <h2 class="text-4xl font-semibold mb-6 text-white">Skills & Expertise</h2>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="core-skills-tab" data-toggle="tab" href="#core-skills" role="tab" aria-controls="core-skills" aria-selected="true">Core Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="workflow-skills-tab" data-toggle="tab" href="#workflow-skills" role="tab" aria-controls="workflow-skills" aria-selected="false">Workflow Skills</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content" id="myTabContent">
+                    <!-- Core Skills Tab -->
+                    <div class="tab-pane fade show active mt-4" id="core-skills" role="tabpanel" aria-labelledby="core-skills-tab">
+                        <div class="row">
+                            <div class="col-md-12 offset-md-12">
+                                <ul class="list-unstyled d-flex flex-wrap">
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Angular</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">JavaScript</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">MongoDB</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">SQL Server</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Typescript</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Node.js</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Git</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Express.js</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Selenium</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Mocha</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Chai</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">HTML</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">CSS</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">MySQL</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Ionic</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Karma</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Jest</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">SCSS</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">PostgreSQL</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Drupal</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Next.js</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mb-3">Flutter</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Workflow Skills Tab -->
+                    <div class="tab-pane fade mt-4" id="workflow-skills" role="tabpanel" aria-labelledby="workflow-skills-tab">
+                        <div class="row">
+                            <div class="col-md-12 offset-md-12">
+                                <ul class="list-unstyled d-flex flex-wrap">
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Clean Architecture Code</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Test Driven Development</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Trunk Development</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Gitlab CI/CD</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Jenkins</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">SonarQube</button></
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Cross Browser Testing & Debugging</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Cross Functional Teams</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Agile Development & Scrum Method</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mr-3 mb-3">Micro Frontend Architecture</button></li>
+                                    <li><button type="button" class="btn btn-outline-light btn-rounded-pill mb-3">Systems Development Life Cycle</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Education Section -->
+        <section id="education" class="py-12 text-center bg-gray-900 text-white">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-semibold mb-8">Education</h2>
+                <div class="flex justify-center">
+                    <div class="w-full md:w-2/3 lg:w-1/2">
+                        <div class="bg-gray-800 rounded-lg shadow-xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                            <img src="university.jpeg" alt="Education Image" class="w-full h-64 object-cover rounded-t-lg">
+                            <div class="p-8">
+                                <h3 class="text-xl font-semibold mb-4">Bachelor's Degree in Computer Science</h3>
+                                <p class="text-lg mb-4">UPI YPTK Padang</p>
+                                <ul class="text-left">
+                                    <li class="mb-2"><strong>Graduation Year:</strong> 2019</li>
+                                    <li><strong>GPA:</strong> 3.6/4.0</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Work Experience Section -->
+        
+        <section id="work-experience" class="py-12 bg-gray-900 text-white text-center">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-semibold mb-8">Work Experience</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <!-- Work Experience 1 -->
+                    <div class="bg-white rounded-lg shadow-xl flex items-center p-4 text-dark">
+                        <img src="company/nicepay.jpg" alt="Company Logo" class="mb-auto h-16 w-auto mr-4">
+                        <div class="mb-auto ">
+                            <h3 class="text-xl font-semibold mb-2">IT Back Office (FE)</h3>
+                            <p class="text-lg mb-2">IONPAY NETWORK</p>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Duration:</strong> Sep 2023 - Present</p>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Responsibilities:</strong></p>
+                            <ul class="text-sm text-left list-disc pl-5 mb-0">
+                                <li>Developing frontend applications with angular with microfronend concept</li>
+                                <li>Collaborating with backend teams to ensure seamless interaction between
+                                    frontend and backend applications.</li>
+                                <li>Discussion with team to create new features</li>
+                                <li>menting web best practices and security standards based on PCIDSS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Work Experience 2 -->
+                    <div class="bg-white rounded-lg shadow-xl flex items-center p-4 text-dark">
+                        <img src="company/ako_media_asia.png" alt="Company Logo" class="mb-auto h-16 w-auto mr-4">
+                        <div class="mb-auto ">
+                            <h3 class="text-xl font-semibold mb-2">Frontend Developer</h3>
+                            <p class="text-lg mb-2">AKO MEDIA ASIA</p>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Duration:</strong> April 2020 - Sep 2023</p>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Responsibilities:</strong></p>
+                            <ul class="text-sm text-left list-disc pl-5 mb-0">
+                                <li>Developing frontend applications with Angular and Next.js</li>
+                                <li>Integrating frontend applications with Drupal CMS</li>
+                                <li>Creating and running unit and integration tests using Karma, Jest, and Jasmine</li>
+                                <li>Implementing web best practices and security standards</li>
+                                <li>Collaborating with backend teams to ensure seamless interaction between frontend and backend applications</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Work Experience 3 -->
+                    <div class="bg-white rounded-lg shadow-xl flex items-center p-4 text-dark">
+                        <img src="https://via.placeholder.com/150" alt="Company Logo" class="mb-auto h-16 w-auto mr-4">
+                        <div class="mb-auto ">
+                            <h3 class="text-xl font-semibold mb-2">Fullstack Developer</h3>
+                            <p class="text-lg mb-2"></p>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Duration:</strong> Maret 2023 - Jan 2021</p>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Responsibilities:</strong></p>
+                            <ul class="text-sm text-left list-disc pl-5 mb-0">
+                                <li>Developing frontend applications with Angular, Laravel, and Ionic</li>
+                                <li>Developing backend applications with Laravel and Node.js</li>
+                                <li>Integrating frontend and backend applications</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Work Experience 4 -->
+                    <div class="bg-white rounded-lg shadow-xl flex items-center p-4 text-dark">
+                        <img src="company/unico.jpeg" alt="Company Logo" class="mb-auto h-16 w-auto mr-4">
+                        <div class="mb-auto ">
+                            <h3 class="text-xl font-semibold mb-2">Fullstack Developer</h3>
+                            <p class="text-lg mb-2">PT Unico Raya</p>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Duration:</strong> June 2019 - Mar 2020</p>
+                            <p class="text-sm text-gray-600 mb-2"><strong>Responsibilities:</strong></p>
+                            <ul class="text-sm text-left list-disc pl-5 mb-0">
+                                <li>Developing frontend applications with Angular</li>
+                                <li>Working with DBMSs such as SQL Server, MongoDB, and Postgres</li>
+                                <li>Developing backend applications with Node.js</li>
+                                <li>Integrating frontend and backend applications</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>                
+
+        <!-- Portofolio Section -->
+        <section id="portfolio" class="py-5 text-center bg-gray-900">
+            <div class="container">
+                <h2 class="text-4xl text-white font-semibold mb-6">Portfolio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="mb-4">
+                        <div class="card h-full border-0 shadow-lg bg-gray-800">
+                            <img src="portofolio/crox.png" class="card-img-top project-img" alt="Project 1">
+                            <div class="card-body">
+                                <h5 class="text-xl text-white font-semibold mb-3">CROX</h5>
+                                <p class="text-white">CROX is a survey platform connecting to conduct surveys to Telkomsel customers. The survey can be in the form of questionnaires, online interviews, or task-based testing.</p>
+                                <a href="https://crox.id/" target="_blank" class="btn btn-outline-light mt-8">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="card h-full border-0 shadow-lg bg-gray-800">
+                            <img src="portofolio/tsurvey.png" class="card-img-top project-img" alt="Project 2">
+                            <div class="card-body">
+                                <h5 class="text-xl text-white font-semibold mb-3">TSURVEY</h5>
+                                <p class="text-white">tsurvey.id is a survey platform that enables users to create, distribute, and analyze surveys to gain insights and feedback from respondents.</p>
+                                <a href="https://tsurvey.id" target="_blank" class="btn btn-outline-light mt-8">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="card h-full border-0 shadow-lg bg-gray-800">
+                            <img src="portofolio/nicelink_merchant.png" class="card-img-top project-img" alt="Project 3">
+                            <div class="card-body">
+                                <h5 class="text-xl text-white font-semibold mb-3">NICELINK Merchant</h5>
+                                <p class="text-white">A platform for merchants to integrate with payment gateways, manage transactions, process refunds and credit card captures, register products for payments.</p>
+                                <a href="https://nicelink.ap.ngrok.io/" target="_blank" class="btn btn-outline-light mt-8">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                    <div class="mb-4">
+                        <div class="card h-full border-0 shadow-lg bg-gray-800">
+                            <img src="portofolio/nicelink_internal.png" class="card-img-top project-img" alt="NICELINK BO">
+                            <div class="card-body">
+                                <h5 class="text-xl text-white font-semibold mb-3">NICELINK BO</h5>
+                                <p class="text-white">An internal system for approvals and transaction monitoring with microfrontend concept.</p>
+                                <a href="https://nicelink.ap.ngrok.io/" target="_blank" class="btn btn-outline-light mt-8">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="card border-0 shadow-lg bg-gray-800">
+                            <img src="portofolio/qr-code.png" class="card-img-top project-img" alt="Package Flutter Qr Code">
+                            <div class="card-body">
+                                <h5 class="text-xl text-white font-semibold mb-3">Package Flutter Qr Code</h5>
+                                <p class="text-white">A Flutter package I've developed to assist individuals needing QR code functionality in their applications.</p>
+                                <a href="https://pub.dev/packages/qrcode_component" target="_blank" class="btn btn-outline-light mt-8">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more project cards following the same structure -->
+                </div>
+            </div>
+        </section>        
+        <button id="scrollToTopBtn" onclick="scrollToTop()" class="fixed bottom-10 right-10 bg-white text-gray-900 px-4 py-2 rounded-full shadow-md hover:bg-gray-300" style="display: none;">
+            <i class="fas fa-arrow-up mr-2"></i> Back to Top
+        </button>
+        <script src="scripts.js"></script>
+        <!-- Bootstrap JS and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
