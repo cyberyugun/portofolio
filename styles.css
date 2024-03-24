@@ -92,3 +92,16 @@ section:not(.bg-gray-900) {
     position: relative;
     pointer-events: none;
 }
+
+#skills li {
+    pointer-events:  auto;
+}
+
+
+#skills li {
+    pointer-events:  auto;
+}
+
+#work-experience .rounded-lg {
+    pointer-events:  auto;
+}
