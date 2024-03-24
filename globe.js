@@ -23,10 +23,19 @@ const moon = Globe()
   .backgroundColor('#111827')
   (elem);
 
-fetch('./moon_landings.json').then(r => r.json()).then(landingSites => {
-  moon.labelsData(landingSites);
-});
-
 // Enable auto-rotation
 moon.controls().autoRotate = true;
 moon.controls().autoRotateSpeed = 0.3; // Adjust rotation speed
+
+// Function to handle window resize
+function handleResize() {
+    // Update globe size and re-render
+    moon.width(window.innerWidth);
+    moon.height(window.innerHeight);
+    moon.renderer().setSize(window.innerWidth, window.innerHeight);
+    moon.camera().aspect = window.innerWidth / window.innerHeight;
+    moon.camera().updateProjectionMatrix();
+}
+
+// Listen for window resize event
+window.addEventListener('resize', handleResize);
