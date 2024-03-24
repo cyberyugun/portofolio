@@ -21,7 +21,8 @@ const myGlobe = Globe()(elem)
   .pointColor(() => 'orange')
   .pointAltitude(0)
   .pointRadius(POINT_SIZE) // Increase point size
-  .pointsMerge(true);
+  .pointsMerge(true)
+  .enablePointerInteraction(true); // Enable mouse controls
 
 // Load data
 const airportParse = ([airportId, name, city, country, iata, icao, lat, lng, alt, timezone, dst, tz, type, source]) => ({ airportId, name, city, country, iata, icao, lat, lng, alt, timezone, dst, tz, type, source });
