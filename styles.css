@@ -61,6 +61,10 @@ img[alt="Company Logo"] {
     background-color: #4a5568;
 }
 
+/* #portfolio .card {
+    height: 100%;
+} */
+
 #work-experience .bg-white:hover img {
     transform: scale(1.2);
 }
