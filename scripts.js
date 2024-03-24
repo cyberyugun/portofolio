@@ -55,7 +55,6 @@ var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
 // Add scroll event listener to window
 window.addEventListener("scroll", function() {
-    console.log(window.scrollY);
     // If the user scrolled down more than 20px from the top, show the button
     if (window.scrollY > 20) {
         scrollToTopBtn.style.display = "block";
