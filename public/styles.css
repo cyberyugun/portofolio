@@ -64,3 +64,16 @@ img[alt="Company Logo"] {
 #work-experience .bg-white:hover img {
     transform: scale(1.2);
 }
+/* body {
+    margin: 0;
+    overflow: hidden;
+} */
+
+#globe-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Place the globe behind other content */
+}

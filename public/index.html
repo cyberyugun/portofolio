@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="md:hidden hidden" id="mobile-menu" style="max-height: calc(100vh - 56px); overflow-y: auto;">
-                <div class="bg-gray-900 px-2 pt-2 pb-3 space-y-1">
+                <div class="bg-gray-800 px-2 pt-2 pb-3 space-y-1">
                     <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="#home">Home</a>
                     <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="#about">About</a>
                     <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="#skills">Skills & Expertise</a>
@@ -47,10 +47,12 @@
                     <a class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" href="#portfolio">Portfolio</a>
                 </div>
             </div>
-        </nav>           
+        </nav>             
           
         <!-- Home Section -->
-        <section id="home" class="py-20 text-center bg-gray-800 text-white">
+        <section id="home" class="py-20 text-center text-white">
+            <div id="globe-container">
+            </div> 
             <div class="container mx-auto mt-32">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate__animated animate__fadeInDown">Welcome to My Portfolio</h1>
                 <p class="text-lg md:text-xl lg:text-2xl mb-8 animate__animated animate__fadeInUp">I am a web developer passionate about creating amazing websites.</p>
@@ -97,7 +99,7 @@
         </section>        
 
         <!-- Skills & Expertise Section -->
-        <section id="skills" class="py-5 text-center bg-gray-900">
+        <section id="skills" class="py-5 text-center">
             <!-- Change background color here -->
             <div class="container">
                 <h2 class="text-4xl font-semibold mb-6 text-white">Skills & Expertise</h2>
@@ -193,7 +195,7 @@
 
         <!-- Work Experience Section -->
         
-        <section id="work-experience" class="py-12 bg-gray-900 text-white text-center">
+        <section id="work-experience" class="py-12 text-white text-center">
             <div class="container mx-auto">
                 <h2 class="text-3xl font-semibold mb-8">Work Experience</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
@@ -329,11 +331,15 @@
                     <!-- Add more project cards following the same structure -->
                 </div>
             </div>
-        </section>        
+        </section>     
         <button id="scrollToTopBtn" onclick="scrollToTop()" class="fixed bottom-10 right-10 bg-white text-gray-900 px-4 py-2 rounded-full shadow-md hover:bg-gray-300" style="display: none;">
             <i class="fas fa-arrow-up mr-2"></i> Back to Top
         </button>
         <script src="scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/globe.gl@latest"></script>
+        <script src="//unpkg.com/d3-array"></script>
+        <script src="//unpkg.com/d3-scale"></script>
+        <script src="globe.js" type="module"></script>
         <!-- Bootstrap JS and jQuery -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

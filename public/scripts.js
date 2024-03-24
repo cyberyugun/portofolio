@@ -71,3 +71,4 @@ function scrollToTop() {
         behavior: 'smooth'
     });
 }
+
