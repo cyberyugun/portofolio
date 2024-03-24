@@ -1,40 +1,67 @@
-const colorScale = d3.scaleOrdinal(['orangered', 'mediumblue', 'darkgreen', 'yellow']);
-
-const labelsTopOrientation = new Set(['Apollo 12', 'Luna 2', 'Luna 20', 'Luna 21', 'Luna 24', 'LCROSS Probe']); // avoid label collisions
+const COUNTRY = 'Indonesia';
+const OPACITY = 0.5; // Increase opacity for clearer arcs
+const POINT_SIZE = 0.03; // Increase point size for clearer points
 
 const elem = document.getElementById('globe-container');
-const moon = Globe()
-  .globeImageUrl('./globe-assets/lunar_surface.jpg')
-  .bumpImageUrl('./globe-assets/lunar_bumpmap.jpg')
+const myGlobe = Globe()(elem)
+  .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
   .backgroundImageUrl('//unpkg.com/three-globe/example/img/night-sky.png')
-  .showGraticules(true)
-  .showAtmosphere(false) // moon has no atmosphere
-  .labelText('label')
-  .labelSize(1.7)
-  .labelDotRadius(0.4)
-  .labelDotOrientation(d => labelsTopOrientation.has(d.label) ? 'top' : 'bottom')
-  .labelColor(d => colorScale(d.agency))
-  .labelLabel(d => `
-      <div><b>${d.label}</b></div>
-      <div>${d.agency} - ${d.program} Program</div>
-      <div>Landing on <i>${new Date(d.date).toLocaleDateString()}</i></div>
-    `)
-  .onLabelClick(d => window.open(d.url, '_blank'))
-  .backgroundColor('#111827')
-  (elem);
+  .pointOfView({ lat: -2.5, lng: 120.2, altitude: 3 }) // aim at Indonesia centroid
+  .arcLabel(d => `${d.airline}: ${d.srcIata} &#8594; ${d.dstIata}`)
+  .arcStartLat(d => +d.srcAirport.lat)
+  .arcStartLng(d => +d.srcAirport.lng)
+  .arcEndLat(d => +d.dstAirport.lat)
+  .arcEndLng(d => +d.dstAirport.lng)
+  .arcDashLength(0.25)
+  .arcDashGap(1)
+  .arcDashInitialGap(() => Math.random())
+  .arcDashAnimateTime(4000)
+  .arcColor(d => [`rgba(0, 255, 0, ${OPACITY})`, `rgba(255, 0, 0, ${OPACITY})`])
+  .arcsTransitionDuration(0)
+  .pointColor(() => 'orange')
+  .pointAltitude(0)
+  .pointRadius(POINT_SIZE) // Increase point size
+  .pointsMerge(true);
+
+// Load data
+const airportParse = ([airportId, name, city, country, iata, icao, lat, lng, alt, timezone, dst, tz, type, source]) => ({ airportId, name, city, country, iata, icao, lat, lng, alt, timezone, dst, tz, type, source });
+const routeParse = ([airline, airlineId, srcIata, srcAirportId, dstIata, dstAirportId, codeshare, stops, equipment]) => ({ airline, airlineId, srcIata, srcAirportId, dstIata, dstAirportId, codeshare, stops, equipment});
+
+Promise.all([
+  fetch('https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat').then(res => res.text())
+    .then(d => d3.csvParseRows(d, airportParse)),
+  fetch('https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat').then(res => res.text())
+    .then(d => d3.csvParseRows(d, routeParse))
+]).then(([airports, routes]) => {
+
+  const byIata = indexBy(airports, 'iata', false);
+
+  const filteredRoutes = routes
+    .filter(d => byIata.hasOwnProperty(d.srcIata) && byIata.hasOwnProperty(d.dstIata)) // Exclude unknown airports
+    .filter(d => d.stops === '0') // Non-stop flights only
+    .map(d => Object.assign(d, {
+      srcAirport: byIata[d.srcIata],
+      dstAirport: byIata[d.dstIata]
+    }))
+    .filter(d => d.srcAirport.country === COUNTRY && d.dstAirport.country !== COUNTRY); // International routes from Indonesia
+
+  myGlobe
+    .pointsData(airports)
+    .arcsData(filteredRoutes);
+});
 
 // Enable auto-rotation
-moon.controls().autoRotate = true;
-moon.controls().autoRotateSpeed = 0.3; // Adjust rotation speed
+myGlobe.controls().autoRotate = true;
+myGlobe.controls().autoRotateSpeed = 0.3; // Adjust rotation speed
 
 // Function to handle window resize
 function handleResize() {
     // Update globe size and re-render
-    moon.width(window.innerWidth);
-    moon.height(window.innerHeight);
-    moon.renderer().setSize(window.innerWidth, window.innerHeight);
-    moon.camera().aspect = window.innerWidth / window.innerHeight;
-    moon.camera().updateProjectionMatrix();
+    myGlobe.width(window.innerWidth);
+    myGlobe.height(window.innerHeight);
+    myGlobe.renderer().setSize(window.innerWidth, window.innerHeight);
+    myGlobe.camera().aspect = window.innerWidth / window.innerHeight;
+    myGlobe.camera().updateProjectionMatrix();
 }
 
 // Listen for window resize event
